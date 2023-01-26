@@ -3,21 +3,44 @@
 // demais itens caso eles possuam a mesma. Previna
 // o comportamento padrão desses links
 
+// Capturando todos os links da página
 const linksInternos = document.querySelectorAll('a[href^="#"]');
 
-linksInternos.forEach((link) => {
-  link.addEventListener("click", (e) => {
-    e.preventDefault();
-    linksInternos.forEach((link) => {
-      link.classList.remove("ativo");
-    });
-    if (link.classList.contains("ativo")) {
-      link.classList.remove("ativo");
-    } else {
-      link.classList.add("ativo");
-    }
-  });
-});
+// Minha solução
+
+// linksInternos.forEach((link) => {
+//   link.addEventListener("click", (e) => {
+
+//     e.preventDefault();
+
+//     linksInternos.forEach((link) => {
+//       link.classList.remove("ativo");
+//     });
+
+//     if (link.classList.contains("ativo")) {
+//       link.classList.remove("ativo");
+//     } else {
+//       link.classList.add("ativo");
+//     }
+//   });
+// });
+
+//SOLUCÃO DO PROFESSOR
+
+function handleLink (event){
+  event.preventDefault();
+  linksInternos.forEach((link)=>{
+    link.classList.remove('ativo')
+  })
+
+  event.currentTarget.classList.add('ativo')
+}
+
+linksInternos.forEach((link) =>{
+  link.addEventListener('clicl',handleLink)
+})
+
+
 
 // Selecione todos os elementos do site começando a partir do body,
 // ao clique mostre exatamente quais elementos estão sendo clicados
@@ -36,19 +59,11 @@ allElements.forEach((item) => {
   });
 });
 // Se o usuário clicar na tecla (t), aumente todo o texto do site.
-// Quando o usuário clicar nos links internos do site,
-// adicione a classe ativo ao item clicado e remova dos
-// demais itens caso eles possuam a mesma. Previna
-// o comportamento padrão desses links
 
-allElements.forEach((item) => {
-  window.addEventListener("keydown", (e) => {
-    if (e.key == "t") {
-      let style = window
-        .getComputedStyle(item, null)
-        .getPropertyValue("font-size");
-      let fontSize = parseFloat(style);
-      item.style.fontSize = fontSize + 1 + "px";
-    }
-  });
-});
+function handleClickT(event){
+  if(event.key =='t'){
+    document.documentElement.classList.toggle('textomaior')
+  }
+}
+
+window.addEventListener('keydown',handleClickT)
