@@ -2,7 +2,7 @@ Object
 String
 function
 Math
-Number
+//Number
 
 // List 5 objetos do browser
 
