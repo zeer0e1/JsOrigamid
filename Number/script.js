@@ -1,31 +1,37 @@
-Number.isNaN("1");
-// Verifica se o valor é um número
-console.log(Number.isNaN("a"));
+// Retorne um número aleatório
+// entre 1050 e 2000
 
-//Verifica se é um numero inteiro
-Number.isInteger(20); //true
-Number.isInteger(20.3); // falso pois é um double
+const ramdomNumber = Math.floor(Math.random() * (1050 - 200 + 1)) + 200;
+console.log(ramdomNumber);
 
-//Transforma o numero de string para float
-Number.parseFloat("20.3");
+// Retorne o maior número da lista abaixo
+const numeros = "4, 5, 20, 8, 9, 300";
 
-//Tranforma o numero de string para inteiro
-Number.parseInt("2");
+let arrayNumber1 = numeros.split(", ");
 
-//se existir um caracter após o numero ele ignora
-console.log(Number.parseInt("100 reais"));
+let arrayNumber2 = [];
+arrayNumber1.forEach((n) => {
+  arrayNumber2.push(Number.parseInt(n));
+});
 
-// arredonda o  numero para as casa decimais do argumento
-const preco = 2.99;
-preco.toFixed(); // 3
+console.log(Math.max.apply(null, arrayNumber2));
 
-const carro = 1000.455;
-preco.toFixed(2); // 1000.46
+// Crie uma função para limpar os preços
+// e retornar os números com centavos arredondados
+// depois retorne a soma total
+const listaPrecos = ["R$ 59,99", " R$ 100,222", "R$ 230  ", "r$  200"];
 
-const preco2 = 1499.49;
-preco2.toFixed();
+function clearPrice(array) {
+  let newPrices = [];
+  let totalArray = 0;
+  array.forEach((item) => {
+    let NumberOfArray = Math.floor(
+      Number.parseFloat(item.trim().toUpperCase().replace("R$", ""))
+    );
+    newPrices.push(NumberOfArray);
+    totalArray += NumberOfArray;
+  });
+  return `Centavos arredondados: ${newPrices}\nSoma total: ${totalArray}`;
+}
 
-// Tranformar para o numeração padrão do local
-let valor = 40.4;
-
-valor = valor.toLocaleString("pt-BR", { style: "currency", currency });
+console.log(clearPrice(listaPrecos));
