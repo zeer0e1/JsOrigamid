@@ -1,48 +1,47 @@
-const instrumentos = ["Guitarra", "Baixo", "Violao"];
-const preco = [49, 99, 69, 80];
+const comidas = ["Pizza", "Frango", "Carne", "Macarrão"];
+// Remova o primeiro valor de comidas e coloque em uma variável
+let primeiraComida = comidas.shift();
+console.log(primeiraComida);
+// Remova o último valor de comidas e coloque em uma variável
+let lastFood = comidas.pop();
+console.log(lastFood);
+// Adicione 'Arroz' ao final da array
+comidas.push("Arroz");
+console.log(comidas);
+// Adicione 'Peixe' e 'Batata' ao início da array
+comidas.unshift("Peixe", "Batata");
+console.log(comidas);
 
-const dados = [
-  new String("Tipo 1"),
-  ["Carro", "Portas", { cor: "Azul", preco: 200 }],
-  function andar(nome) {
-    console.log(nome);
-  },
-];
+const estudantes = ["Marcio", "Brenda", "Joana", "Kleber", "Julia"];
+// Arrume os estudantes em ordem alfabética
+console.log(estudantes.sort());
+// Inverta a ordem dos estudantes
+console.log(estudantes.reverse());
+// Verifique se Joana faz parte dos estudantes
+console.log(
+  `Joana está na lista de estudantes ? ${estudantes.includes("Joana")}`
+);
+// Verifique se Juliana faz parte dos estudantes
+console.log(
+  `Juliana está na lista de estudantes ? ${estudantes.includes("Juliana")}`
+);
 
-const carros = new Array("For", "Fiat", "Honda");
+let html = `<section>
+              <div>Sobre</div>
+              <div>Produtos</div>
+              <div>Contato</div>
+            </section>`;
+// Substitua section por ul e div com li,
+// utilizando split e join
 
-carros[2] = "Ferrari";
-carros[3] = "Kia";
-carros[20] = "Gol";
+let htmlArrray = html.split("section").join("ul").split("div").join("li");
+console.log(htmlArrray);
 
+const carros = ["Ford", "Fiat", "VW", "Honda"];
+// Remova o último carro, mas antes de remover
+// salve a array original em outra variável
+
+let carros2 = carros.slice();
+carros.pop();
+console.log(carros2);
 console.log(carros);
-
-const frutas = ["Banana", "Pera", ["Uva Roxa", "Uva verde"]];
-console.log(frutas[2][0].length);
-
-const instrumentos2 = ["Guitarra", "Bairro", "Violão"];
-
-// Ordena em ordem alfabetica
-instrumentos.sort();
-
-const idades = [32, 21, 33, 43, 1, 12, 8];
-
-// Ordena caractere por carectere
-idades.sort();
-
-const carros2 = ["Ford", "Fiat", "w"];
-
-//Adiciona items no começo da array
-carros2.unshift("Kia", "Ferrai");
-
-// adiciona item no final da array
-carros2.push("Fusca");
-
-//remove o primeiro elemento da array e retorna o mesmo
-const primeiroCarro = carros2.shift();
-
-// remove o utlimo elemento da array e retorna o mesmo
-const ultimoCarro = carros2.pop();
-
-// Inverte todos os elementos da array
-const arrayInvertida = carros2.reverse();
