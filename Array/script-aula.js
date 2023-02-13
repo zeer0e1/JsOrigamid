@@ -25,7 +25,7 @@ const instrumentos2 = ["Guitarra", "Bairro", "Violão"];
 // Ordena em ordem alfabetica
 instrumentos.sort();
 
-const idades = [32, 21, 33, 43, 1, 12, 8];
+const idades = [32, 21, 33, 43, 1, 12, ,24,8];
 
 // Ordena caractere por carectere
 idades.sort();

@@ -27,9 +27,9 @@ console.log(
 );
 
 let html = `<section>
-              <div>Sobre</div>
-              <div>Produtos</div>
-              <div>Contato</div>
+              <div>teste</div>
+              <div>teste</div>
+              <div>teste</div>
             </section>`;
 // Substitua section por ul e div com li,
 // utilizando split e join
