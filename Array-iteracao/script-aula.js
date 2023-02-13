@@ -62,7 +62,7 @@ const aulas = [
 ];
 
 const tempoAulas = aulas.map((aula) => aula.min);
-
+console.log(tempoAulas, "aaaaaabbbcc");
 /**
  * [].reduce(acomulador,itemAtual,index)
  * Retorna o resultado da iteração do item atual
@@ -74,7 +74,7 @@ const totaT = aulas2.reduce((tempo, aula) => {
   return tempo + aula;
 });
 
-console.log(totaT);
+console.log("aaaa", totaT);
 
 const maiorNumero = aulas2.reduce((anterior, atual) => {
   return anterior < atual ? atual : anterior;

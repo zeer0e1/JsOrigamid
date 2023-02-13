@@ -1,23 +1,36 @@
 // Selecione cada curso e retorne uma array
 // com objetos contendo o título, descricao,
 // aulas e horas de cada curso
-let ObjectCursos = [{ titulo: "", descricao: "", aulas: "", aulas: 0 }];
-const cursos = Array.from(document.querySelectorAll("h1")).map(
-  (curso, index) => {
-    return (ObjectCursos[index].titulo = curso.innerText);
-  },
-  [{}]
-);
 
+const cursos = Array.from(document.querySelectorAll("section"));
+
+let ObjectCursos = cursos.map((curso) => {
+  const titulo = curso.querySelector("h1").innerText;
+  const descricao = curso.querySelector("p").innerText;
+  const aulas = curso.querySelector(".aulas").innerText;
+  const horas = curso.querySelector(".horas").innerText;
+
+  return {
+    titulo,
+    descricao,
+    aulas,
+    horas,
+  };
+});
 console.log(ObjectCursos);
 
 // Retorne uma lista com os
 // números maiores que 100
 const numeros = [3, 44, 333, 23, 122, 322, 33];
 
+const numerosMaioresQueCem = numeros.filter((numero) => numero > 100);
+
+console.log(numerosMaioresQueCem);
+
 // Verifique se Baixo faz parte
 // da lista de instrumentos e retorne true
 const instrumentos = ["Guitarra", "Baixo", "Bateria", "Teclado"];
+console.log(instrumentos.includes("Baixo"));
 
 // Retorne o valor total das compras
 const compras = [
@@ -42,3 +55,10 @@ const compras = [
     preco: "R$ 10,60",
   },
 ];
+
+const totalCompras = compras.reduce((valor, item) => {
+  const precoLimpo = +item.preco.replace(",", ".").replace("R$", "");
+  return (valor += precoLimpo);
+}, 0);
+
+console.log(totalCompras);
