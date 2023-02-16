@@ -1,0 +1,39 @@
+body {
+  margin: 0;
+}
+
+[data-geral] {
+  position: fixed;
+
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+[data-clock] {
+  height: 200px;
+  width: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button {
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  height: 30px;
+  width: 60px;
+}
+
+[data-clock] p {
+  font-size: 40px;
+}
+
+.geral {
+  display: grid;
+  grid-gap: 10px;
+}
