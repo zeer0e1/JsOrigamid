@@ -32,7 +32,7 @@ buttonClock.addEventListener("click", () => {
         initMinuto += 1;
         minuto.innerText = initMinuto;
       }
-    }, 200);
+    }, 100);
     setTimeout(() => {
       buttonClock.innerText = "Pause";
     }, 100);
