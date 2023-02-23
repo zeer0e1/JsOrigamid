@@ -18,9 +18,28 @@ const handleStyle = {
   texto(value) {
     this.element.innerText = value;
   },
+  color(value) {
+    this.element.style.color = value;
+  },
+  border(value) {
+    this.element.style.border = value + "px";
+  },
+  borderRadius(value) {
+    this.element.style.borderRadius = value + "px";
+  },
+  fontFamily(value) {
+    this.element.style.borderRadius = value + "px";
+  },
+  fontSize(value) {
+    this.element.style.fontSize = value + "rem";
+  },
 };
 function handleChange(event) {
   const name = event.target.name;
   const value = event.target.value;
   handleStyle[name](value);
+}
+
+function showCss() {
+  cssText.innerText;
 }
